@@ -1,0 +1,19 @@
+       _            _
+      /\ \        / /\
+      \_\ \  T7  / /  \
+      /\__ \    / / /\ \
+     / /_ \ \  / / /\ \ \
+    / / /\ \ \/_/ /  \ \ \
+   / / /  \/_/\_\/    \ \ \
+  / / /                \ \ \
+ / / /                  \ \ \
+/_/ /                    \ \ \
+\_\/                      \_\/
+
+
+In order to build the formated documentation, please use
+ 'make pdfdocs' or 'make htmldocs' in the 'docs' folder.
+
+For copyright and license informations, please see the
+ file LICENSE in this directory.
+
