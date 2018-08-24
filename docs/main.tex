@@ -1,5 +1,9 @@
 \documentclass{article}
 
+\ifdefined\HCode
+  \def\pgfsysdriver{dvisvgm4ht/pgfsys-dvisvgm4ht.def}
+ \fi
+
 \usepackage[square,numbers]{natbib}
 \bibliographystyle{unsrtnat}
 
@@ -143,7 +147,7 @@
     \chainin (p1a)    [join];
     \chainin (p2)     [join];
     \chainin (term1)  [join=by tip];
-    \chainin (p3)     [join,join=with p5a by {skip loop=-11mm,tip}];
+    \chainin (p3)     [join,join=with p5 by {skip loop=-11mm,tip}];
     \chainin (plus)   [join=by tip];
     \chainin (p4)     [join];
     \chainin (term2)  [join=by tip];
@@ -201,6 +205,8 @@
     \node (p1)  [point]  {}; \&  \node (p1a)    [point]    {};       \&
     \node (p2)  [point]  {}; \&  \node (number) [terminal] {number}; \&
     \node (p3)  [point]  {}; \&  \node (p3a)    [point]    {};       \\
+    % Empty space
+    \& \& \&  \&                                                     \\
     % Second row:
     \& \& \& \node (LP)  [terminal]{$($}; \&
     \node (ex) [nonterminal]{expression}; \& \node (RP) [terminal]{$)$}; \\

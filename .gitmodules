@@ -1,0 +1,3 @@
+[submodule "docs/dvisvgm4ht"]
+	path = docs/dvisvgm4ht
+	url = https://github.com/michal-h21/dvisvgm4ht

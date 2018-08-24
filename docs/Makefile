@@ -14,7 +14,7 @@ bib:
 	pdflatex $<
 
 %.html: %.tex
-	htlatex  $<
+	make4ht -u -c $(wildcard *.cfg) $<
 
 clean:
 	$(RM) $(OUT)
