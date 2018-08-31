@@ -7,7 +7,7 @@
  * LICENSE in the main directory of T7 for more details.
  */
 
-#include "plain.h"
+#include "lex.h"
 
 int main()
 {

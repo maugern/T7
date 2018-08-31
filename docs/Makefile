@@ -1,5 +1,5 @@
-# pdflatex from package 'texlive-base' is requied to build PDF  documents
-# htlatex  from package 'tex4ht'       is requied to build HTML documents
+# pdflatex from package 'texlive-base'        is requied to build PDF  documents
+# make4ht  from package 'texlive-extra-utils' is requied to build HTML documents
 
 OUT=*.log *.aux *.out *.css *.svg *.toc *.4ct *.4tc *.bbl *.blg *.lg *.tmp *.xref *.idv *.pdf *.html *.dvi
 

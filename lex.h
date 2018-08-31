@@ -13,7 +13,7 @@
 #define TIMES     3 /* * */
 #define LP        4 /* ( */
 #define RP        5 /* ) */
-#define NUM_OR_ID 6 /*number or identifier */
+#define NUM_OR_ID 6 /* number or identifier */
 
 extern char *yytext;
 extern int   yyleng;
@@ -22,4 +22,4 @@ extern int   yylineno;
 int  match(int token);
 int  lex();
 void advance();
-
+void statements();

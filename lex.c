@@ -25,12 +25,12 @@ int lex()
 
     while (1)
     {
-        while (!*current)
+        while ( !*current)
         {
             /* Get new lines, skipping any leading white space on the line, until a nonblank line is found. */
 
             current = input_buffer;
-            if ( !fgets (input_buffer, sizeof(input_buffer), stdin))
+            if (!fgets(input_buffer, sizeof(input_buffer), stdin))
             {
                 current = '\0';
                 return EOI;
@@ -38,16 +38,16 @@ int lex()
 
             ++yylineno;
 
-            while(isspace(*current)) ++current;
+            while (isspace(*current)) ++current;
         }
 
-        for ( ; *current ; ++current)
+        for (; *current ; ++current)
         {
             /* Get the next token */
             yytext = current;
             yyleng = 1;
 
-            switch ( *current )
+            switch (*current)
             {
             case EOF:
                 return EOI ;

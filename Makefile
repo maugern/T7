@@ -2,6 +2,7 @@ CC = gcc
 LD = gcc
 CFLAGS  = -Wall -W -Werror -ansi
 LDFLAGS =
+VFLAGS  = --quiet --tool=memcheck --leak-check=full --error-exitcode=1 --track-origins=yes
 
 BIN = T7
 
@@ -10,7 +11,7 @@ CFILES  = $(wildcard *.c)
 
 OBJS = $(CFILES:.c=.o)
 
-.PHONY: all clean mrproper docs
+.PHONY: all clean mrproper docs memcheck
 
 all: $(BIN)
 
@@ -22,6 +23,10 @@ makefile.dep: $(CFILES) $(HEADERS)
 
 docs:
 	$(MAKE) -C docs
+
+memcheck: $(BIN)
+	@valgrind $(VFLAGS) ./$(BIN)
+	@echo "Memory check passed"
 
 clean:
 	$(RM) $(OBJS) makefile.dep

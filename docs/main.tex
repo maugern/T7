@@ -239,5 +239,29 @@
             platform specific binary generation. This is this intermediate language method how will
             be used in T7.
 
+        \section{First improvments}
+            \subsection{Improving the Parser}
+            The first improvement constitutes of changing recursive expressions to loops to decrease
+            the size of subroutines stack. The second improvement is the merge of our four baci
+            syntaxes: statements, expressions, terms, factors and their subroutines.
+
+            \subsection{Temporary variables in code generation}
+            In the real world, a compiler use registers or the run-time stack for temporaries. For
+            the moments we just use global variables: the expression is evaluated operator by
+            operator, with each temporary holding the result of evaluating the current subexpression
+            . If the number of subexpressions exceeds the number of temporaries, an error is raised.
+
+            \subsection{Generation using subroutine arguments}
+            The subroutine that reads the factor and calls procedure to get an anonymous temporary
+            name, generates the code to copy the input number into the temporary, and then returns
+            the name to its parent. Similarly, the best place to generate multiplication
+            instructions is the place where the times signs are read, in the
+            term~\ref{fig:TermSyntax} operation. After the factor~\ref{fig:FactorSyntax} calls,
+            two globals are called to join the names of the two temporaries. Code is generated to do
+            the multiplication, one of the temporaries is freed, and the other (which holds the
+            result of the multiply) is passed backup to the parent. So, this temporary, the one that
+            holds the result of the subexpression evaluation, is used in the next step. Addition is
+            handled the same way in expression~\ref{fig:expressionSyntax}.
+
 \bibliography{main}
 \end{document}
